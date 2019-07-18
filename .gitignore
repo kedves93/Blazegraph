@@ -1,0 +1,6 @@
+BlazegraphWebApp/.vs/BlazegraphWebApp/v15/
+BlazegraphWebApp/.vs/
+BlazegraphWebApp/BlazegraphWebApp/aws-beanstalk-tools-defaults.json
+BlazegraphWebApp/packages/
+EC2/web-server-key.pem
+EC2/
