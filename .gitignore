@@ -1,6 +1,10 @@
-BlazegraphWebApp/.vs/BlazegraphWebApp/v15/
-BlazegraphWebApp/.vs/
-BlazegraphWebApp/BlazegraphWebApp/aws-beanstalk-tools-defaults.json
-BlazegraphWebApp/packages/
-EC2/web-server-key.pem
-EC2/
+Docs/EC2 Key/web-server-key.pem
+Apps/S3ToBlazegraphLambda/.vs/
+Apps/S3ToRekognitionLambda/.vs/
+Apps/UploadToS3Lambda/.vs/
+Apps/S3ToBlazegraphLambda/S3ToBlazegraphLambda/bin/
+Apps/S3ToBlazegraphLambda/S3ToBlazegraphLambda/obj/
+Apps/S3ToRekognitionLambda/S3ToRekognitionLambda/bin/
+Apps/S3ToRekognitionLambda/S3ToRekognitionLambda/obj/
+Apps/UploadToS3Lambda/UploadToS3Lambda/bin/
+Apps/UploadToS3Lambda/UploadToS3Lambda/obj/
