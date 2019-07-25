@@ -20,6 +20,12 @@ namespace UploadToS3Lambda
         /// </summary>
         public const string TARGET_BUCKET = "blazegraphwebapp-preprocess-images-bucket";
 
+        /// <summary>
+        /// Only allow requests from blazegraphwebapp hosted in S3
+        /// </summary>
+        // public const string ALLOWED_ORIGIN = "http://blazegraphwebapp.s3-website.eu-central-1.amazonaws.com/";
+        public const string ALLOWED_ORIGIN = "*";
+
         private readonly IAmazonS3 _s3Client;
 
         /// <summary>
@@ -33,13 +39,16 @@ namespace UploadToS3Lambda
         }
 
         /// <summary>
-        /// A simple function that takes a string and does a ToUpper
+        /// A function handling the APIGatewayProxyRequest
         /// </summary>
-        /// <param name="input"></param>
+        /// <param name="request"></param>
         /// <param name="context"></param>
         /// <returns></returns>
         public async Task<APIGatewayProxyResponse> FunctionHandler(APIGatewayProxyRequest request, ILambdaContext context)
         {
+            //
+            // get image from request
+            //
             Image image = new Image();
 
             try
@@ -52,26 +61,81 @@ namespace UploadToS3Lambda
                 {
                     StatusCode = 400,
                     Body = ex.Message,
-                    Headers = new Dictionary<string, string>() { { "Content-Type", "text/plain" } }
+                    Headers = new Dictionary<string, string>()
+                    {
+                        { "Content-Type", "text/plain" },
+                        { "Access-Control-Allow-Origin", ALLOWED_ORIGIN }
+                    }
                 };
             }
 
+            //
+            // create stream
+            //
+            MemoryStream stream;
+
+            try
+            {
+                byte[] data = Convert.FromBase64String(image.Base64Content);
+                stream = new MemoryStream(data);
+            }
+            catch (Exception ex)
+            {
+                context.Logger.LogLine(ex.Message);
+                return new APIGatewayProxyResponse()
+                {
+                    StatusCode = 400,
+                    Body = ex.Message,
+                    Headers = new Dictionary<string, string>()
+                    {
+                        { "Content-Type", "text/plain" },
+                        { "Access-Control-Allow-Origin", ALLOWED_ORIGIN }
+                    }
+                };
+            }
+
+            //
+            // put stream into S3
+            //
             try
             {
                 await _s3Client.PutObjectAsync(new PutObjectRequest()
                 {
-                    ContentBody = image.Base64Content,
+                    InputStream = stream,
                     BucketName = TARGET_BUCKET,
-                    Key = Path.Combine("images", image.Name, image.Extension)
+                    Key = Path.Combine("images", image.Name)
                 });
             }
             catch (AmazonS3Exception ex)
             {
                 context.Logger.LogLine(ex.Message);
-                return new APIGatewayProxyResponse() { StatusCode = 500 };
+                return new APIGatewayProxyResponse()
+                {
+                    StatusCode = 500,
+                    Body = ex.Message,
+                    Headers = new Dictionary<string, string>()
+                    {
+                        { "Content-Type", "text/plain" },
+                        { "Access-Control-Allow-Origin", ALLOWED_ORIGIN }
+                    }
+                };
+            }
+            finally
+            {
+                stream.Dispose();
             }
 
-            return new APIGatewayProxyResponse() { StatusCode = 200 };
+            //
+            //  return successfull response
+            //
+            return new APIGatewayProxyResponse()
+            {
+                StatusCode = 200,
+                Headers = new Dictionary<string, string>()
+                {
+                    { "Access-Control-Allow-Origin", ALLOWED_ORIGIN }
+                }
+            };
         }
     }
 }
