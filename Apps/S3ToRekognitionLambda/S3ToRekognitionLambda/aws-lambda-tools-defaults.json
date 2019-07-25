@@ -17,5 +17,5 @@
     "function-name"        : "FaceRekognitionLambda",
     "function-role"        : "arn:aws:iam::526110916966:role/lambda_exec_FaceRekognitionLambda",
     "tracing-mode"         : "PassThrough",
-    "environment-variables" : "\"MinConfidence\"=\"90\""
+    "environment-variables" : "\"MinConfidence\"=\"60\";\"MaxLabels\"=\"20\""
 }
