@@ -14,7 +14,20 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="BlazegraphConnector">
-      <HintPath>C:\Users\z003tk9s\Downloads\blazegraph-dotnetrdf-master\BlazegraphConnector.dll</HintPath>
+      <HintPath>C:\Users\z003tk9s\Downloads\blazegraph-dotnetrdf-master\BlazegraphConnector\bin\Release\BlazegraphConnector.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="dotNetRDF">
+      <HintPath>C:\Users\z003tk9s\Downloads\blazegraph-dotnetrdf-master\BlazegraphConnector\bin\Release\dotNetRDF.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>C:\Users\z003tk9s\Downloads\blazegraph-dotnetrdf-master\BlazegraphConnector\bin\Release\HtmlAgilityPack.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="VDS.Common">
+      <HintPath>C:\Users\z003tk9s\Downloads\blazegraph-dotnetrdf-master\BlazegraphConnector\bin\Release\VDS.Common.dll</HintPath>
+      <Private>true</Private>
     </Reference>
   </ItemGroup>
 </Project>
