@@ -1,0 +1,4 @@
+<div class="container">
+    <p-fileUpload #form name="images[]" customUpload="true" accept="image/*" (uploadHandler)="onUploadFiles($event, form)"></p-fileUpload>
+    <p-button label="Export" (onClick)="onExportClick()"></p-button>
+</div>

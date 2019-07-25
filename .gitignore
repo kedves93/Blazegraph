@@ -8,3 +8,7 @@ Apps/S3ToRekognitionLambda/S3ToRekognitionLambda/bin/
 Apps/S3ToRekognitionLambda/S3ToRekognitionLambda/obj/
 Apps/UploadToS3Lambda/UploadToS3Lambda/bin/
 Apps/UploadToS3Lambda/UploadToS3Lambda/obj/
+Apps/BlazegraphToS3Lambda/.vs/
+Apps/BlazegraphToS3Lambda/BlazegraphToS3Lambda/bin/
+Apps/BlazegraphToS3Lambda/BlazegraphToS3Lambda/obj/
+Docs/EC2 Key/private-key.ppk
