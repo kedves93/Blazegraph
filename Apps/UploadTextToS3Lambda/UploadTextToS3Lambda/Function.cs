@@ -2,7 +2,6 @@ using Amazon.Lambda.APIGatewayEvents;
 using Amazon.Lambda.Core;
 using Amazon.S3;
 using Amazon.S3.Model;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,14 +10,14 @@ using System.Threading.Tasks;
 // Assembly attribute to enable the Lambda function's JSON input to be converted into a .NET class.
 [assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
 
-namespace UploadToS3Lambda
+namespace UploadTextToS3Lambda
 {
     public class Function
     {
         /// <summary>
         /// The name of the bucket where to upload the image.
         /// </summary>
-        public const string TARGET_BUCKET = "blazegraphwebapp-preprocess-images-bucket";
+        public const string TARGET_BUCKET = "blazegraphwebapp-preprocess-bucket";
 
         /// <summary>
         /// Only allow requests from blazegraphwebapp hosted in S3
@@ -47,41 +46,15 @@ namespace UploadToS3Lambda
         public async Task<APIGatewayProxyResponse> FunctionHandler(APIGatewayProxyRequest request, ILambdaContext context)
         {
             //
-            // get image from request
+            // get text from request
             //
-            Image image = new Image();
-
+            string text;
             try
             {
-                image = JsonConvert.DeserializeObject<Image>(request.Body);
+                text = request.Body;
             }
             catch (Exception ex)
             {
-                return new APIGatewayProxyResponse()
-                {
-                    StatusCode = 400,
-                    Body = ex.Message,
-                    Headers = new Dictionary<string, string>()
-                    {
-                        { "Content-Type", "text/plain" },
-                        { "Access-Control-Allow-Origin", ALLOWED_ORIGIN }
-                    }
-                };
-            }
-
-            //
-            // create stream
-            //
-            MemoryStream stream;
-
-            try
-            {
-                byte[] data = Convert.FromBase64String(image.Base64Content);
-                stream = new MemoryStream(data);
-            }
-            catch (Exception ex)
-            {
-                context.Logger.LogLine(ex.Message);
                 return new APIGatewayProxyResponse()
                 {
                     StatusCode = 400,
@@ -101,9 +74,9 @@ namespace UploadToS3Lambda
             {
                 await _s3Client.PutObjectAsync(new PutObjectRequest()
                 {
-                    InputStream = stream,
+                    ContentBody = text,
                     BucketName = TARGET_BUCKET,
-                    Key = Path.Combine("images", image.Name)
+                    Key = Path.Combine("texts", DateTime.Now.ToString("dd-MM-yyyy_HH-mm-ss-ffff") + ".txt")
                 });
             }
             catch (AmazonS3Exception ex)
@@ -119,10 +92,6 @@ namespace UploadToS3Lambda
                         { "Access-Control-Allow-Origin", ALLOWED_ORIGIN }
                     }
                 };
-            }
-            finally
-            {
-                stream.Dispose();
             }
 
             //

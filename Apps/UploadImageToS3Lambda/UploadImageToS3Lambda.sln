@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.705
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "S3ToBlazegraphLambda", "S3ToBlazegraphLambda\S3ToBlazegraphLambda.csproj", "{A46E2F6F-03D7-4489-B66D-E8CD67505743}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UploadImageToS3Lambda", "UploadImageToS3Lambda\UploadImageToS3Lambda.csproj", "{4BB6DE05-2947-421A-90A7-D6AB213491D2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A46E2F6F-03D7-4489-B66D-E8CD67505743}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A46E2F6F-03D7-4489-B66D-E8CD67505743}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A46E2F6F-03D7-4489-B66D-E8CD67505743}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A46E2F6F-03D7-4489-B66D-E8CD67505743}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BB6DE05-2947-421A-90A7-D6AB213491D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BB6DE05-2947-421A-90A7-D6AB213491D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BB6DE05-2947-421A-90A7-D6AB213491D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BB6DE05-2947-421A-90A7-D6AB213491D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {642410DB-4BB2-4F46-A5DF-26C91EE32504}
+		SolutionGuid = {20EDCE80-403D-4C8D-8FA7-33AF6ECC6AFB}
 	EndGlobalSection
 EndGlobal

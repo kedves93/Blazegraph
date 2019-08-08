@@ -1,4 +1,4 @@
-﻿namespace UploadToS3Lambda
+﻿namespace UploadImageToS3Lambda
 {
     public class Image
     {

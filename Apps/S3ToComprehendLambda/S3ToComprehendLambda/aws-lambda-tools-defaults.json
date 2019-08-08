@@ -12,9 +12,9 @@
     "framework"     : "netcoreapp2.1",
     "function-runtime" : "dotnetcore2.1",
     "function-memory-size" : 256,
-    "function-timeout"     : 90,
-    "function-handler"     : "S3ToBlazegraphLambda::S3ToBlazegraphLambda.Function::FunctionHandler",
-    "function-name"        : "SaveToBlazegraphLambda",
+    "function-timeout"     : 30,
+    "function-handler"     : "S3ToComprehendLambda::S3ToComprehendLambda.Function::FunctionHandler",
+    "function-name"        : "ComprehendLambda",
     "function-role"        : "arn:aws:iam::526110916966:role/LambdaRole",
     "tracing-mode"         : "PassThrough",
     "environment-variables" : ""

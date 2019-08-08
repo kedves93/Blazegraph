@@ -13,7 +13,7 @@
     "function-runtime" : "dotnetcore2.1",
     "function-memory-size" : 256,
     "function-timeout"     : 30,
-    "function-handler"     : "UploadToS3Lambda::UploadToS3Lambda.Function::FunctionHandler",
+    "function-handler"     : "UploadImageToS3Lambda::UploadImageToS3Lambda.Function::FunctionHandler",
     "function-name"        : "UploadImageLambda",
     "function-role"        : "arn:aws:iam::526110916966:role/LambdaRole",
     "tracing-mode"         : "PassThrough",

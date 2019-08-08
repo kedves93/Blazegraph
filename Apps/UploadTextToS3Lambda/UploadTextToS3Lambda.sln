@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.705
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UploadTextToS3Lambda", "UploadTextToS3Lambda\UploadTextToS3Lambda.csproj", "{C8A3B64C-BABF-4BB7-B285-B1A5D4F25CAD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C8A3B64C-BABF-4BB7-B285-B1A5D4F25CAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8A3B64C-BABF-4BB7-B285-B1A5D4F25CAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8A3B64C-BABF-4BB7-B285-B1A5D4F25CAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8A3B64C-BABF-4BB7-B285-B1A5D4F25CAD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6755A953-A87D-4A11-B49D-5D281E8560C7}
+	EndGlobalSection
+EndGlobal

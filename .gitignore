@@ -12,3 +12,21 @@ Apps/BlazegraphToS3Lambda/.vs/
 Apps/BlazegraphToS3Lambda/BlazegraphToS3Lambda/bin/
 Apps/BlazegraphToS3Lambda/BlazegraphToS3Lambda/obj/
 Docs/EC2 Key/private-key.ppk
+Apps/BlazegraphToPollyLambda/.vs/
+Apps/BlazegraphToPollyLambda/BlazegraphToPollyLambda/bin/
+Apps/BlazegraphToPollyLambda/BlazegraphToPollyLambda/obj/
+Apps/S3ComprehendToBlazegraphLambda/S3ComprehendToBlazegraphLambda/bin/
+Apps/S3ComprehendToBlazegraphLambda/S3ComprehendToBlazegraphLambda/obj/
+Apps/S3RekognitionToBlazegraphLambda/S3RekognitionToBlazegraphLambda/bin/
+Apps/S3RekognitionToBlazegraphLambda/S3RekognitionToBlazegraphLambda/obj/
+Apps/S3ToComprehendLambda/.vs/S3ToComprehendLambda/v15/
+Apps/S3ToComprehendLambda/S3ToComprehendLambda/bin/
+Apps/S3ToComprehendLambda/S3ToComprehendLambda/obj/
+Apps/UploadImageToS3Lambda/.vs/UploadImageToS3Lambda/v15/
+Apps/UploadImageToS3Lambda/UploadImageToS3Lambda/bin/
+Apps/UploadImageToS3Lambda/UploadImageToS3Lambda/obj/
+Apps/UploadTextToS3Lambda/.vs/UploadTextToS3Lambda/v15/
+Apps/UploadTextToS3Lambda/UploadTextToS3Lambda/bin/
+Apps/UploadTextToS3Lambda/UploadTextToS3Lambda/obj/
+Apps/S3RekognitionToBlazegraphLambda/.vs/S3RekognitionToBlazegraphLambda/v15/
+Apps/S3ComprehendToBlazegraphLambda/.vs/S3ComprehendToBlazegraphLambda/v15/

@@ -5,12 +5,11 @@
     <AWSProjectType>Lambda</AWSProjectType>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Amazon.Lambda.APIGatewayEvents" Version="1.2.0" />
     <PackageReference Include="Amazon.Lambda.Core" Version="1.1.0" />
-    <PackageReference Include="Amazon.Lambda.Serialization.Json" Version="1.5.0" />
-    <PackageReference Include="Amazon.Lambda.S3Events" Version="1.1.0" />
-    <PackageReference Include="AWSSDK.Rekognition" Version="3.3.100.49" />
-    <PackageReference Include="AWSSDK.S3" Version="3.3.104.1" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="Amazon.Lambda.Serialization.Json" Version="1.4.0" />
+    <PackageReference Include="AWSSDK.Polly" Version="3.3.102.2" />
+    <PackageReference Include="AWSSDK.S3" Version="3.3.104.8" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="BlazegraphConnector">

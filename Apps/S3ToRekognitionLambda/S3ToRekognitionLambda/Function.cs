@@ -40,7 +40,7 @@ namespace S3ToRekognitionLambda
         /// <summary>
         /// The name of the bucket where the processed image metadata should be saved.
         /// </summary>
-        public const string TARGET_BUCKET = "blazegraphwebapp-postprocess-images-bucket";
+        public const string TARGET_BUCKET = "blazegraphwebapp-postprocess-bucket";
 
         private readonly IAmazonS3 _s3Client;
 
@@ -80,7 +80,7 @@ namespace S3ToRekognitionLambda
 
         /// <summary>
         /// A function for responding to S3 create events. It will determine if the object is an image and use Amazon Rekognition
-        /// to detect labels, faces and save them to S3.
+        /// to detect labels and face details, faces and save them to S3.
         /// </summary>
         /// <param name="s3Event"></param>
         /// <param name="context"></param>

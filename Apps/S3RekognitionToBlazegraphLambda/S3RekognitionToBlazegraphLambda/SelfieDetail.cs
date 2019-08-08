@@ -1,7 +1,7 @@
 ﻿using Amazon.Rekognition.Model;
 using System.Collections.Generic;
 
-namespace S3ToBlazegraphLambda
+namespace S3RekognitionToBlazegraphLambda
 {
     public class SelfieDetail
     {

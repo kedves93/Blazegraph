@@ -15,7 +15,7 @@ using VDS.RDF.Storage;
 // Assembly attribute to enable the Lambda function's JSON input to be converted into a .NET class.
 [assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
 
-namespace S3ToBlazegraphLambda
+namespace S3RekognitionToBlazegraphLambda
 {
     public class Function
     {
@@ -68,7 +68,7 @@ namespace S3ToBlazegraphLambda
                             //
                             // get main face
                             //
-                            var selfieDetail = JsonConvert.DeserializeObject<SelfieDetail>(reader.ReadToEnd());
+                            var selfieDetail = JsonConvert.DeserializeObject<SelfieDetail>(await reader.ReadToEndAsync());
                             var mainFace = selfieDetail.FacesDetails.OrderByDescending(faceDetail => faceDetail.BoundingBox.Width * faceDetail.BoundingBox.Height).First();
 
                             //

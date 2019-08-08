@@ -40,12 +40,12 @@ If already installed check if new version is available.
 
 Execute unit tests
 ```
-    cd "S3ToBlazegraphLambda/test/S3ToBlazegraphLambda.Tests"
+    cd "S3ToComprehendLambda/test/S3ToComprehendLambda.Tests"
     dotnet test
 ```
 
 Deploy function to AWS Lambda
 ```
-    cd "S3ToBlazegraphLambda/src/S3ToBlazegraphLambda"
+    cd "S3ToComprehendLambda/src/S3ToComprehendLambda"
     dotnet lambda deploy-function
 ```

@@ -13,9 +13,9 @@
     "function-runtime" : "dotnetcore2.1",
     "function-memory-size" : 256,
     "function-timeout"     : 30,
-    "function-handler"     : "S3ToRekognitionLambda::S3ToRekognitionLambda.Function::FunctionHandler",
-    "function-name"        : "RekognitionLambda",
+    "function-handler"     : "S3ComprehendToBlazegraphLambda::S3ComprehendToBlazegraphLambda.Function::FunctionHandler",
+    "function-name"        : "SaveComprehendToBlazegraphLambda",
     "function-role"        : "arn:aws:iam::526110916966:role/LambdaRole",
     "tracing-mode"         : "PassThrough",
-    "environment-variables" : "\"MinConfidence\"=\"60\";\"MaxLabels\"=\"20\""
+    "environment-variables" : ""
 }
