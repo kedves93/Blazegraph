@@ -68,7 +68,7 @@ namespace UploadTextToS3Lambda
             }
 
             //
-            // put stream into S3
+            // put text into S3
             //
             try
             {

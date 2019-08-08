@@ -5,6 +5,7 @@ using Amazon.Lambda.S3Events;
 using Amazon.S3;
 using Amazon.S3.Model;
 using Newtonsoft.Json;
+using System;
 using System.IO;
 using System.Threading.Tasks;
 
@@ -115,6 +116,7 @@ namespace S3ToComprehendLambda
                 {
                     var body = new TextDetail()
                     {
+                        Id = Guid.NewGuid().ToString(),
                         Entities = detectEntitiesResponse.Entities,
                         Sentiment = detectSentimentResponse.Sentiment
                     };

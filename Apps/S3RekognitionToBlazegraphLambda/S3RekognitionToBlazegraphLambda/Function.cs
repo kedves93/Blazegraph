@@ -48,7 +48,7 @@ namespace S3RekognitionToBlazegraphLambda
         /// This method is called for every Lambda invocation. This method takes in an S3 event object and can be used
         /// to respond to S3 notifications.
         /// </summary>
-        /// <param name="evnt"></param>
+        /// <param name="s3Event"></param>
         /// <param name="context"></param>
         /// <returns></returns>
         public async Task FunctionHandler(S3Event s3Event, ILambdaContext context)
