@@ -11,6 +11,8 @@ import { ExportService } from 'src/app/services/export.service';
 })
 export class HomeComponent implements OnInit {
 
+  inputText: string;
+
   constructor(private uploadService: UploadService, private exportService: ExportService) { }
 
   ngOnInit() {
@@ -36,6 +38,12 @@ export class HomeComponent implements OnInit {
       x => {},
       error => console.log(error)
     );
+  }
+
+  onSubmitText() {
+    this.uploadService.uploadText(this.inputText).subscribe(
+      x => {},
+      error => console.log(error));
   }
 
 }

@@ -9,17 +9,23 @@ import { environment } from 'src/environments/environment';
 })
 export class UploadService {
 
-  private headers: HttpHeaders;
-
   constructor(private http: HttpClient) {
-    this.headers = new HttpHeaders({
-      'Content-Type': 'application/json'
-    });
   }
 
   uploadImage(rawImage: RawImage): Observable<any> {
+    const reqHeaders = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
     const body = JSON.stringify(rawImage);
-    return this.http.post<any>(environment.apiGateway + 'uploadimage', body, { headers: this.headers });
+    return this.http.post<any>(environment.apiGateway + 'uploadimage', body, { headers: reqHeaders });
+  }
+
+  uploadText(text: string): Observable<any> {
+    const reqHeaders = new HttpHeaders({
+      'Content-Type': 'text/plain'
+    });
+    const body = text;
+    return this.http.post<any>(environment.apiGateway + 'uploadtext', body, { headers: reqHeaders });
   }
 
 }
